@@ -1,9 +1,8 @@
-import 'package:app_digimon/src/screens/home/home_controller.dart';
+import 'package:app_digimon/src/screens/home/components/icon_isFavorited.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../../../models/digimon.dart';
 import '../../../../size_config.dart';
+import '../../../models/digimon.dart';
 
 class DialogImage extends StatefulWidget {
   const DialogImage({
@@ -18,8 +17,6 @@ class DialogImage extends StatefulWidget {
 }
 
 class _DialogImageState extends State<DialogImage> {
-  var homeController = HomeController();
-
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -45,51 +42,7 @@ class _DialogImageState extends State<DialogImage> {
               const Spacer(),
               Image.network(widget.digimon.image),
               const Spacer(),
-              SizedBox(
-                height: 50.0,
-                width: 50.0,
-                child: GestureDetector(
-                  onTap: () async {
-                    await homeController.favoritedDigimon(widget.digimon);
-                    setState(() {});
-                  },
-                  child: FutureBuilder<bool>(
-                    future: homeController
-                        .digimonIsFavoriteByName(widget.digimon.name),
-                    builder: (context, AsyncSnapshot<bool> snapshot) {
-                      if (snapshot.hasData) {
-                        return snapshot.data == true
-                            ? Stack(
-                                alignment: Alignment.center,
-                                children: const [
-                                  Center(
-                                    child: Icon(Icons.star,
-                                        color: Colors.black, size: 50.0),
-                                  ),
-                                  Center(
-                                      child: Icon(Icons.star,
-                                          color: Colors.yellow, size: 40.0))
-                                ],
-                              )
-                            : Stack(
-                                alignment: Alignment.center,
-                                children: const [
-                                  Center(
-                                    child: Icon(Icons.star,
-                                        color: Colors.black, size: 50.0),
-                                  ),
-                                  Center(
-                                      child: Icon(Icons.star,
-                                          color: Colors.white, size: 40.0))
-                                ],
-                              );
-                      } else {
-                        return const CircularProgressIndicator();
-                      }
-                    },
-                  ),
-                ),
-              ),
+              IconIsFavorited(digimon: widget.digimon),
               const Spacer(),
             ],
           ),
