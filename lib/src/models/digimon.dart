@@ -15,7 +15,7 @@ class Digimon {
       'name': name,
       'image': image,
       'level': level,
-      'isFavorite': isFavorite,
+      'isFavorite': isFavorite == false ? 0 : 1,
     };
   }
 

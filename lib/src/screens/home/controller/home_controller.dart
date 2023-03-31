@@ -1,6 +1,6 @@
 import 'package:app_digimon/src/data/store.dart';
 
-import '../../models/digimon.dart';
+import '../../../models/digimon.dart';
 
 class HomeController {
   Store store = Store();

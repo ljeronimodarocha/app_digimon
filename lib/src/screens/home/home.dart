@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../main.dart';
 import '../../../size_config.dart';
-import 'components/body.dart';
+import 'components/body_home.dart';
+import 'components/select_all_favorited_digimon.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -11,11 +13,17 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return const SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Body(),
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Padding(
+          padding: EdgeInsets.all(getProportionateScreenWidth(12)),
+          child: const Text('Digimon Wiki'),
+        ),
+        centerTitle: true,
       ),
+      body: const BodyHome(),
+      floatingActionButton: const SelectAllFavoritedDigimonIcon(),
     );
   }
 }

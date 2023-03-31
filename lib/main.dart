@@ -2,6 +2,8 @@ import 'package:app_digimon/src/providers/digimon_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'size_config.dart';
+import 'src/screens/home/components/body_home.dart';
 import 'src/screens/home/home.dart';
 
 void main() {
@@ -18,20 +20,14 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => DigimonProvider(),
-        )
+        ),
       ],
       child: MaterialApp(
         title: 'Digimon App',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Digimon Wiki'),
-            centerTitle: true,
-          ),
-          body: const Home(),
-        ),
+        home: Home(),
       ),
     );
   }

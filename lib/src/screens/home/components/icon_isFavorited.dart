@@ -2,7 +2,7 @@
 import 'package:app_digimon/src/models/digimon.dart';
 import 'package:flutter/material.dart';
 
-import '../home_controller.dart';
+import '../controller/home_controller.dart';
 
 class IconIsFavorited extends StatefulWidget {
   final Digimon digimon;
