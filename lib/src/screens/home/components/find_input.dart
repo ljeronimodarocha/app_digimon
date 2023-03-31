@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import '../../../providers/digimon_provider.dart';
 import '../../../../size_config.dart';
 
-class inputFind extends StatelessWidget {
-  const inputFind({
+class InputFind extends StatelessWidget {
+  const InputFind({
     super.key,
   });
 

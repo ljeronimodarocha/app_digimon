@@ -1,6 +1,7 @@
-import 'package:app_digimon/src/shared/cliente_http.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/src/response.dart';
+
+import 'package:app_digimon/src/shared/cliente_http.dart';
+import 'package:http/http.dart';
 
 class ClienteHttpImp extends ClienteHttp {
   @override

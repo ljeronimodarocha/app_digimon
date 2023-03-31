@@ -35,14 +35,14 @@ class DigimonProvider extends ChangeNotifier {
           );
 
       List values = jsonDecode(response.body);
-      values.forEach((element) {
+      for (var element in values) {
         loadeditems.add(
           Digimon(
               name: element['name'],
               image: element['img'],
               level: element['level']),
         );
-      });
+      }
 
       if (_originListDigimons.isEmpty) {
         _originListDigimons = loadeditems.reversed.toList();

@@ -6,7 +6,7 @@ import 'dialog_image.dart';
 
 class CardDigimon extends StatelessWidget {
   final Digimon digimon;
-  const CardDigimon(this.digimon);
+  const CardDigimon(this.digimon, {super.key});
 
   @override
   Widget build(BuildContext context) {

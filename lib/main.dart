@@ -2,8 +2,6 @@ import 'package:app_digimon/src/providers/digimon_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'size_config.dart';
-import 'src/screens/home/components/body_home.dart';
 import 'src/screens/home/home.dart';
 
 void main() {
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Home(),
+        home: const Home(),
       ),
     );
   }

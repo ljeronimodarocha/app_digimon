@@ -1,7 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:app_digimon/src/models/digimon.dart';
+
 import 'package:flutter/material.dart';
 
+import '../../../models/digimon.dart';
 import '../controller/home_controller.dart';
 
 class IconIsFavorited extends StatefulWidget {

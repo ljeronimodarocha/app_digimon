@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:app_digimon/src/models/digimon.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'DataBaseProvider.dart';
+import 'data_base_provider.dart';
 
 class Store {
-  DatabaseProvider _connection = DatabaseProvider.instance;
+  final DatabaseProvider _connection = DatabaseProvider.instance;
 
   Future<int> salvarDigimon(Digimon digimon) async {
     final db = await _connection.db;
@@ -32,9 +32,9 @@ class Store {
     List<Digimon> lista = [];
     final db = await _connection.db;
     var result = await db!.query('digimon');
-    result.forEach((d) {
+    for (var d in result) {
       lista.add(Digimon.fromMap(d));
-    });
+    }
     return lista;
   }
 }

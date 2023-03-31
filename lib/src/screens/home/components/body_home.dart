@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../size_config.dart';
 import 'body.dart';
 
 class BodyHome extends StatelessWidget {

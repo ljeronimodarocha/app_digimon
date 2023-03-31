@@ -5,10 +5,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-const String CREATE_CONTACTS_TABLE_SCRIPT =
-    "CREATE TABLE digimon(name TEXT UNIQUE, image TEXT, level TEXT, isFavorite BOOLEAN)";
-
 class DatabaseProvider {
+  final String CREATE_CONTACTS_TABLE_SCRIPT =
+      "CREATE TABLE digimon(name TEXT UNIQUE, image TEXT, level TEXT, isFavorite BOOLEAN)";
+
   DatabaseProvider._();
 
   static DatabaseProvider? _instance;
@@ -38,7 +38,7 @@ class DatabaseProvider {
           ),
         );
       } on DatabaseException catch (e) {
-        print(e);
+        throw Exception(e);
       }
     } else {
       Directory documentsDirectory = await getApplicationDocumentsDirectory();
@@ -49,8 +49,8 @@ class DatabaseProvider {
           version: 3,
           onCreate: _onCreate,
         );
-      } catch (e) {
-        print(e);
+      } on DatabaseException catch (e) {
+        throw Exception(e);
       }
     }
 

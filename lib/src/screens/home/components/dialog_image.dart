@@ -1,8 +1,8 @@
-import 'package:app_digimon/src/screens/home/components/icon_isFavorited.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../size_config.dart';
 import '../../../models/digimon.dart';
+import 'icon_is_favorited.dart';
 
 class DialogImage extends StatefulWidget {
   const DialogImage({
